@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#b8ed43">
+  <title>喜茶专送｜取餐配送服务</title>
+  <style>
+    :root{--ink:#151515;--muted:#707070;--paper:#f4f4ef;--white:#fff;--lime:#b8ed43;--lime-dark:#8ec51e;--line:#deded7;--danger:#d53b2f;--shadow:0 14px 42px rgba(0,0,0,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{width:min(100%,560px);margin:auto;min-height:100vh;background:#fafaf7;box-shadow:0 0 60px rgba(0,0,0,.08);padding-bottom:132px}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:22px 20px 28px;border-radius:0 0 30px 30px}.hero:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:var(--lime);right:-65px;top:-72px;opacity:.95}.topline{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.06em}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--lime);color:var(--ink);font-size:13px}.tag{font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px}.hero h1{font-size:36px;line-height:1.08;margin:34px 0 10px;letter-spacing:-.04em;position:relative;z-index:1}.hero p{margin:0;color:#c9c9c3;font-size:14px;line-height:1.75;max-width:410px;position:relative;z-index:1}.hero strong{color:var(--lime)}
+    .steps{margin:18px 16px 0;padding:18px 12px;background:#fff;border-radius:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr;align-items:center}.step{text-align:center}.step b{display:grid;place-items:center;width:38px;height:38px;margin:0 auto 8px;border-radius:13px;background:#eff8d8;font-size:16px}.step span{font-size:11px;font-weight:700}.arrow{color:#aaa;text-align:center}
+    .channel-tabs{margin:16px 16px 0;padding:5px;background:#e9e9e3;border-radius:16px;display:grid;grid-template-columns:1fr 1fr;gap:5px}.channel-tab{border:0;border-radius:12px;padding:12px 8px;background:transparent;color:#73736d;font-size:13px;font-weight:800;transition:.2s}.channel-tab.active{background:var(--ink);color:#fff;box-shadow:0 5px 14px rgba(0,0,0,.16)}.channel-tab:focus-visible{outline:3px solid rgba(184,237,67,.65);outline-offset:2px}.is-hidden{display:none!important}
+    form{padding:2px 16px}.card{margin-top:16px;padding:20px;background:#fff;border:1px solid #eeeeea;border-radius:22px;box-shadow:0 5px 20px rgba(0,0,0,.035)}.section-title{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:18px}.section-title i{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--lime);font-style:normal;font-size:13px}.field{margin:0 0 16px}.field:last-child{margin-bottom:0}.field label,.label{display:block;font-size:13px;font-weight:750;margin-bottom:8px}.req{color:var(--danger)}.control{width:100%;height:48px;border:1.5px solid var(--line);background:#fbfbf8;border-radius:13px;padding:0 14px;color:var(--ink);outline:none;transition:.2s}.control:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(184,237,67,.32)}.control[readonly]{background:#f1f5e8;border-color:#dce8c2;color:#343b24;font-weight:750;cursor:not-allowed}.fixed-note{display:flex;align-items:center;gap:7px;margin:0 0 14px;padding:10px 12px;border-radius:12px;background:#eff8d8;color:#4d5e26;font-size:12px;line-height:1.5}.fixed-note b{color:var(--ink)}textarea.control{height:92px;resize:vertical;padding-top:13px;line-height:1.5}.error{display:none;color:var(--danger);font-size:12px;margin:7px 2px 0}.invalid .control,.invalid .upload-box{border-color:var(--danger)}.invalid .error{display:block}.hint{font-size:11px;color:#8a8a84;margin-top:7px}
+    .upload-box{position:relative;min-height:148px;border:1.5px dashed #bdbdb5;border-radius:16px;background:#fbfbf8;overflow:hidden}.upload-empty{display:flex;min-height:148px;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#707068}.upload-empty b{color:var(--ink);font-size:14px}.upload-icon{display:grid;place-items:center;width:44px;height:44px;background:#eff8d8;border-radius:14px;font-size:22px}.file-input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.preview{display:none;position:relative;min-height:180px}.preview img{display:block;width:100%;max-height:300px;object-fit:contain;background:#efefe9}.preview-actions{position:absolute;right:10px;top:10px;display:flex;gap:7px}.mini-btn{border:0;background:rgba(21,21,21,.9);color:#fff;padding:8px 11px;border-radius:10px;font-size:12px}.has-preview .upload-empty{display:none}.has-preview .preview{display:block}
+    .time-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:block;text-align:center;padding:13px 8px;border:1.5px solid var(--line);border-radius:13px;font-size:13px;font-weight:700}.choice input:focus-visible+span{outline:3px solid rgba(184,237,67,.55);outline-offset:2px}.choice input:checked+span{border-color:var(--ink);background:var(--lime)}.invalid .choice span{border-color:var(--danger)}#scheduleWrap{display:none;margin-top:12px}
+    .spec-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.spec-options .choice span{padding:11px 5px;font-size:12px}.spec-note{margin:-4px 0 16px;padding:11px 12px;border-radius:12px;background:#fff7dc;color:#6b591e;font-size:11px;line-height:1.65}
+    .notice{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.65;color:#61615c}.notice input{appearance:none;flex:0 0 auto;width:20px;height:20px;border:1.5px solid #aaa;border-radius:6px;margin:1px 0 0}.notice input:checked{border-color:var(--ink);background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23151515' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='m5 12 4 4L19 6'/%3E%3C/svg%3E") center/15px no-repeat}.privacy{margin:18px 18px 2px;text-align:center;font-size:11px;color:#92928b;line-height:1.65}
+    .checkout{position:fixed;z-index:10;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,560px);padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid #e5e5df;display:flex;gap:14px;align-items:center}.price{flex:1}.price small{display:block;color:var(--muted);font-size:10px}.price b{font-size:25px}.price b span{font-size:14px}.submit{min-width:174px;border:0;border-radius:15px;padding:15px 18px;background:var(--ink);color:#fff;font-weight:800;box-shadow:0 8px 20px rgba(0,0,0,.18)}.submit:active{transform:translateY(1px)}
+    dialog{border:0;padding:0;border-radius:26px;width:min(calc(100% - 34px),430px);box-shadow:0 30px 90px rgba(0,0,0,.3)}dialog::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(3px)}.modal{padding:26px}.success-mark{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:var(--lime);font-size:28px;margin-bottom:18px}.modal h2{margin:0 0 7px;font-size:24px}.modal>p{margin:0 0 18px;color:var(--muted);font-size:13px}.summary{background:#f4f4ef;border-radius:16px;padding:14px;margin-bottom:18px}.row{display:flex;justify-content:space-between;gap:16px;padding:7px 0;font-size:12px}.row span{color:var(--muted)}.row b{text-align:right;max-width:65%}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.modal-actions button{border:1px solid var(--line);border-radius:13px;padding:12px;background:#fff;font-weight:700}.modal-actions .again{border-color:var(--ink);background:var(--ink);color:#fff}
+    @media(max-width:360px){.hero h1{font-size:31px}.steps{grid-template-columns:1fr 13px 1fr 13px 1fr}.submit{min-width:145px}.checkout{gap:8px}.spec-options{grid-template-columns:repeat(2,1fr)}}@media(min-width:700px){body{padding:28px 0}.shell{border-radius:30px;overflow:hidden;min-height:calc(100vh - 56px)}.hero{border-radius:0 0 30px 30px}.checkout{bottom:16px;border:1px solid #ddd;border-radius:20px;width:528px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div class="topline"><div class="brand"><span class="logo">专送</span>喜茶专送</div><span class="tag">第三方配送服务</span></div>
+    <h1>你点好茶，<br><strong>我们送到家。</strong></h1>
+    <p id="heroIntro">请先在喜茶小程序完成点单，再将取餐信息提交给骑手。我们只负责取餐与配送，不销售任何商品。</p>
+  </header>
+  <section class="steps" aria-label="服务流程">
+    <div class="step"><b>1</b><span id="stepOne">小程序点单</span></div><div class="arrow">›</div>
+    <div class="step"><b>2</b><span id="stepTwo">提交取餐码</span></div><div class="arrow">›</div>
+    <div class="step"><b>3</b><span id="stepThree">骑手送达</span></div>
+  </section>
+  <div class="channel-tabs" role="tablist" aria-label="选择配送渠道">
+    <button class="channel-tab active" id="pickupTab" type="button" role="tab" aria-selected="true" aria-controls="pickupCredential" data-channel="pickup">取餐码配送</button>
+    <button class="channel-tab" id="voucherTab" type="button" role="tab" aria-selected="false" aria-controls="voucherCredential" data-channel="voucher">团购券配送</button>
+  </div>
+  <form id="orderForm" novalidate>
+    <input id="orderType" name="orderType" type="hidden" value="pickup">
+    <section class="card">
+      <h2 class="section-title"><i>店</i>固定取餐门店</h2>
+      <p class="fixed-note"><b>专店配送</b><span>目前仅支持梅山店，暂不接受其他门店订单。</span></p>
+      <div class="field"><label for="storeName">取餐门店</label><input class="control" id="storeName" name="storeName" value="喜茶梅山店" readonly aria-readonly="true"></div>
+      <input id="storeAddress" name="storeAddress" type="hidden" value="梅山店（固定取餐门店）">
+    </section>
+    <section class="card">
+      <h2 class="section-title"><i>码</i><span id="credentialTitle">取餐码截图</span></h2>
+      <div class="field credential-panel" id="pickupCredential" role="tabpanel" aria-labelledby="pickupTab" data-field="pickupImage" data-channel-panel="pickup">
+        <span class="label">上传截图 <span class="req">*</span></span>
+        <div class="upload-box" id="uploadBox">
+          <div class="upload-empty"><span class="upload-icon">＋</span><b>点击上传取餐码</b><span style="font-size:11px">JPG / PNG / WebP，最大 5 MB</span></div>
+          <input class="file-input" id="pickupImage" name="pickupImage" type="file" accept="image/jpeg,image/png,image/webp" aria-label="上传取餐码截图">
+          <div class="preview"><img id="previewImage" alt="取餐码截图预览"><div class="preview-actions"><button class="mini-btn" id="replaceImage" type="button">重新上传</button><button class="mini-btn" id="removeImage" type="button">删除</button></div></div>
+        </div><p class="error" id="imageError">请上传取餐码截图</p><p class="hint">图片仅在当前浏览器中预览，不会上传或保存。</p>
+      </div>
+      <div class="field credential-panel is-hidden" id="voucherCredential" role="tabpanel" aria-labelledby="voucherTab" data-field="voucherImage" data-channel-panel="voucher">
+        <span class="label">上传团购券码截图 <span class="req">*</span></span>
+        <div class="upload-box" id="voucherUploadBox">
+          <div class="upload-empty"><span class="upload-icon">＋</span><b>点击上传团购券码</b><span style="font-size:11px">JPG / PNG / WebP，最大 5 MB</span></div>
+          <input class="file-input" id="voucherImage" name="voucherImage" type="file" accept="image/jpeg,image/png,image/webp" aria-label="上传团购券码截图">
+          <div class="preview"><img id="voucherPreviewImage" alt="团购券码截图预览"><div class="preview-actions"><button class="mini-btn" id="replaceVoucherImage" type="button">重新上传</button><button class="mini-btn" id="removeVoucherImage" type="button">删除</button></div></div>
+        </div><p class="error">请上传团购券码截图</p><p class="hint">骑手将在门店出示并线下核销；图片不会上传或保存。</p>
+      </div>
+    </section>
+    <section class="card is-hidden" id="voucherSpecs" data-channel-panel="voucher">
+      <h2 class="section-title"><i>味</i>饮品制作要求</h2>
+      <p class="spec-note">实际可选规格以团购商品及门店规则为准。如所选规格无法制作，骑手将联系您确认。</p>
+      <div class="field" data-field="sweetness"><span class="label">甜度 <span class="req">*</span></span><div class="spec-options">
+        <label class="choice"><input type="radio" name="sweetness" value="标准甜"><span>标准甜</span></label><label class="choice"><input type="radio" name="sweetness" value="少甜"><span>少甜</span></label><label class="choice"><input type="radio" name="sweetness" value="少少甜"><span>少少甜</span></label><label class="choice"><input type="radio" name="sweetness" value="不另外加糖"><span>不另外加糖</span></label><label class="choice"><input type="radio" name="sweetness" value="其他"><span>其他</span></label>
+      </div><p class="error">请选择甜度</p></div>
+      <div class="field" data-field="temperature"><span class="label">温度 <span class="req">*</span></span><div class="spec-options">
+        <label class="choice"><input type="radio" name="temperature" value="正常冰"><span>正常冰</span></label><label class="choice"><input type="radio" name="temperature" value="少冰"><span>少冰</span></label><label class="choice"><input type="radio" name="temperature" value="少少冰"><span>少少冰</span></label><label class="choice"><input type="radio" name="temperature" value="去冰"><span>去冰</span></label><label class="choice"><input type="radio" name="temperature" value="常温"><span>常温</span></label><label class="choice"><input type="radio" name="temperature" value="热"><span>热</span></label><label class="choice"><input type="radio" name="temperature" value="其他"><span>其他</span></label>
+      </div><p class="error">请选择温度</p></div>
+      <div class="field" data-field="productionNote"><label for="productionNote">制作要求 <span class="req">*</span></label><textarea class="control" id="productionNote" name="productionNote" maxlength="200" placeholder="请说明饮品、数量及特殊要求；选择“其他”时请在此写明"></textarea><p class="error">请填写饮品、数量及制作要求</p><p class="hint">骑手将按此内容向门店说明，最多 200 字</p></div>
+    </section>
+    <section class="card">
+      <h2 class="section-title"><i>送</i>收货信息</h2>
+      <div class="field" data-field="receiver"><label for="receiver">收货人 <span class="req">*</span></label><input class="control" id="receiver" name="receiver" placeholder="请输入姓名" autocomplete="name"><p class="error">请填写收货人姓名</p></div>
+      <div class="field" data-field="phone"><label for="phone">手机号码 <span class="req">*</span></label><input class="control" id="phone" name="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="用于骑手联系您" autocomplete="tel"><p class="error">请输入正确的中国大陆手机号码</p></div>
+      <div class="field" data-field="address"><label for="address">收货地址 <span class="req">*</span></label><textarea class="control" id="address" name="address" placeholder="小区、楼栋、单元及门牌号" autocomplete="street-address"></textarea><p class="error">请填写详细收货地址</p></div>
+      <div class="field" data-field="deliveryTime"><span class="label">期望送达 <span class="req">*</span></span><div class="time-options"><label class="choice"><input type="radio" name="deliveryTime" value="尽快送达" checked><span>尽快送达</span></label><label class="choice"><input type="radio" name="deliveryTime" value="预约时间"><span>预约时间</span></label></div><div id="scheduleWrap"><input class="control" type="datetime-local" id="scheduleTime" name="scheduleTime" aria-label="预约送达时间"><p class="error">请选择有效的预约时间</p></div></div>
+      <div class="field"><label for="note">配送备注</label><textarea class="control" id="note" name="note" maxlength="120" placeholder="如：到达后请电话联系（选填）"></textarea><p class="hint">最多 120 字</p></div>
+    </section>
+    <section class="card"><div class="field" data-field="agreement"><label class="notice"><input id="agreement" name="agreement" type="checkbox"><span id="agreementText">我已在喜茶小程序完成商品下单并付款，同意骑手凭所提交的取餐码代为取餐；已知本页收取的 <b>¥6 仅为配送服务费</b>，不包含商品费用。</span></label><p class="error">请阅读并同意服务须知</p></div></section>
+  </form>
+  <p class="privacy">本页面为第三方取餐配送演示服务，并非喜茶官方页面。<br>演示不会发送真实订单，也不会保存您的个人信息。</p>
+</main>
+<div class="checkout"><div class="price"><small>仅配送服务费</small><b><span>¥</span>6</b></div><button class="submit" id="submitOrder" type="button">提交配送订单</button></div>
+<dialog id="successDialog"><div class="modal"><div class="success-mark">✓</div><h2>提交成功</h2><p>骑手将尽快与您联系，请保持手机畅通。</p><div class="summary" id="orderSummary"></div><div class="modal-actions"><button id="closeDialog" type="button">关闭</button><button class="again" id="newOrder" type="button">继续提交</button></div></div></dialog>
+<script>
+  (()=>{
+    const form=document.querySelector('#orderForm'),dialog=document.querySelector('#successDialog');
+    let activeChannel='pickup';
+    const field=n=>document.querySelector(`[data-field="${n}"]`),setInvalid=(n,b,msg)=>{const el=field(n);el.classList.toggle('invalid',b);if(msg)el.querySelector('.error').textContent=msg};
+    const uploads={
+      pickup:{input:document.querySelector('#pickupImage'),box:document.querySelector('#uploadBox'),preview:document.querySelector('#previewImage'),url:'',valid:false},
+      voucher:{input:document.querySelector('#voucherImage'),box:document.querySelector('#voucherUploadBox'),preview:document.querySelector('#voucherPreviewImage'),url:'',valid:false}
+    };
+    const clearImage=type=>{const u=uploads[type];if(u.url)URL.revokeObjectURL(u.url);u.url='';u.valid=false;u.input.value='';u.preview.removeAttribute('src');u.box.classList.remove('has-preview')};
+    const readImage=type=>{const u=uploads[type],f=u.input.files[0],fieldName=type==='pickup'?'pickupImage':'voucherImage';setInvalid(fieldName,false);if(!f){clearImage(type);return}if(!['image/jpeg','image/png','image/webp'].includes(f.type)){clearImage(type);setInvalid(fieldName,true,'仅支持 JPG、PNG 或 WebP 图片');return}if(f.size>5*1024*1024){clearImage(type);setInvalid(fieldName,true,'图片大小不能超过 5 MB');return}if(u.url)URL.revokeObjectURL(u.url);u.url=URL.createObjectURL(f);u.preview.src=u.url;u.valid=true;u.box.classList.add('has-preview')};
+    uploads.pickup.input.addEventListener('change',()=>readImage('pickup'));uploads.voucher.input.addEventListener('change',()=>readImage('voucher'));
+    document.querySelector('#replaceImage').addEventListener('click',()=>uploads.pickup.input.click());document.querySelector('#removeImage').addEventListener('click',e=>{e.stopPropagation();clearImage('pickup')});
+    document.querySelector('#replaceVoucherImage').addEventListener('click',()=>uploads.voucher.input.click());document.querySelector('#removeVoucherImage').addEventListener('click',e=>{e.stopPropagation();clearImage('voucher')});
+    const channelCopy={
+      pickup:{title:'取餐码截图',intro:'请先在喜茶小程序完成点单，再将取餐信息提交给骑手。我们只负责取餐与配送，不销售任何商品。',steps:['小程序点单','提交取餐码','骑手送达'],agreement:'我已在喜茶小程序完成商品下单并付款，同意骑手凭所提交的取餐码代为取餐；已知本页收取的 <b>¥6 仅为配送服务费</b>，不包含商品费用。'},
+      voucher:{title:'团购券码截图',intro:'持有喜茶团购券？提交券码截图和制作要求，骑手将前往门店线下核销、取餐并配送。',steps:['获取团购券','提交券码截图','骑手核销送达'],agreement:'我授权骑手在门店出示并线下核销所提交的团购券码，并按制作要求代为取餐；已知本页收取的 <b>¥6 仅为配送服务费</b>，不包含团购商品费用。'}
+    };
+    const setChannel=type=>{activeChannel=type;document.querySelector('#orderType').value=type;document.querySelectorAll('.channel-tab').forEach(tab=>{const active=tab.dataset.channel===type;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active))});document.querySelectorAll('[data-channel-panel]').forEach(panel=>panel.classList.toggle('is-hidden',panel.dataset.channelPanel!==type));const copy=channelCopy[type];document.querySelector('#credentialTitle').textContent=copy.title;document.querySelector('#heroIntro').textContent=copy.intro;['#stepOne','#stepTwo','#stepThree'].forEach((id,i)=>document.querySelector(id).textContent=copy.steps[i]);document.querySelector('#agreementText').innerHTML=copy.agreement;document.querySelectorAll('.invalid').forEach(el=>el.classList.remove('invalid'))};
+    document.querySelectorAll('.channel-tab').forEach(tab=>tab.addEventListener('click',()=>setChannel(tab.dataset.channel)));
+    document.querySelectorAll('input[name="deliveryTime"]').forEach(r=>r.addEventListener('change',()=>{document.querySelector('#scheduleWrap').style.display=r.value==='预约时间'&&r.checked?'block':'none'}));
+    const dt=document.querySelector('#scheduleTime'),setMinTime=()=>{const d=new Date(Date.now()+30*60000);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());dt.min=d.toISOString().slice(0,16)};setMinTime();
+    form.addEventListener('input',e=>{const wrap=e.target.closest('[data-field]');if(wrap)wrap.classList.remove('invalid')});
+    function validate(){let ok=true;[['receiver',v=>v.trim()],['phone',v=>/^1[3-9]\d{9}$/.test(v.trim())],['address',v=>v.trim()]].forEach(([n,test])=>{const bad=!test(document.querySelector('#'+n).value);setInvalid(n,bad);if(bad)ok=false});const imageField=activeChannel==='pickup'?'pickupImage':'voucherImage';if(!uploads[activeChannel].valid){setInvalid(imageField,true,activeChannel==='pickup'?'请上传取餐码截图':'请上传团购券码截图');ok=false}if(activeChannel==='voucher'){const sweetness=!document.querySelector('input[name="sweetness"]:checked'),temperature=!document.querySelector('input[name="temperature"]:checked'),production=!document.querySelector('#productionNote').value.trim();setInvalid('sweetness',sweetness);setInvalid('temperature',temperature);setInvalid('productionNote',production);if(sweetness||temperature||production)ok=false}const scheduled=document.querySelector('input[name="deliveryTime"]:checked').value==='预约时间';if(scheduled){const bad=!dt.value||new Date(dt.value)<=new Date();document.querySelector('#scheduleWrap').classList.toggle('invalid',bad);if(bad)ok=false}else document.querySelector('#scheduleWrap').classList.remove('invalid');const agree=!document.querySelector('#agreement').checked;setInvalid('agreement',agree);if(agree)ok=false;return ok}
+    document.querySelector('#submitOrder').addEventListener('click',()=>{if(!validate()){document.querySelector('.invalid')?.scrollIntoView({behavior:'smooth',block:'center'});return}const delivery=document.querySelector('input[name="deliveryTime"]:checked').value==='预约时间'?dt.value.replace('T',' '):'尽快送达';let details=`<div class="row"><span>订单渠道</span><b>${activeChannel==='pickup'?'取餐码配送':'团购券配送'}</b></div><div class="row"><span>取餐门店</span><b>${escapeHtml(document.querySelector('#storeName').value)}</b></div>`;if(activeChannel==='voucher'){details+=`<div class="row"><span>甜度 / 温度</span><b>${escapeHtml(document.querySelector('input[name="sweetness"]:checked').value)} / ${escapeHtml(document.querySelector('input[name="temperature"]:checked').value)}</b></div><div class="row"><span>制作要求</span><b>${escapeHtml(document.querySelector('#productionNote').value.trim())}</b></div>`}document.querySelector('#orderSummary').innerHTML=details+`<div class="row"><span>收货人</span><b>${escapeHtml(document.querySelector('#receiver').value)} ${escapeHtml(document.querySelector('#phone').value)}</b></div><div class="row"><span>期望送达</span><b>${escapeHtml(delivery)}</b></div><div class="row"><span>配送服务费</span><b>¥6</b></div>`;clearImage(activeChannel);dialog.showModal()});
+    const escapeHtml=s=>s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    document.querySelector('#closeDialog').addEventListener('click',()=>dialog.close());document.querySelector('#newOrder').addEventListener('click',()=>{dialog.close();clearImage('pickup');clearImage('voucher');form.reset();setChannel('pickup');document.querySelector('#scheduleWrap').style.display='none';setMinTime();window.scrollTo({top:0,behavior:'smooth'})});
+    dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});window.addEventListener('beforeunload',()=>{Object.values(uploads).forEach(u=>{if(u.url)URL.revokeObjectURL(u.url)})});
+  })();
+</script>
+</body>
+</html>
+
